@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todolist_app/constant/colors_constant.dart';
+import 'package:flutter_todolist_app/widgets/list_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,8 +9,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _value = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,34 +82,42 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: mCrime),
               child: Column(
                 children: [
-                  Container(
-                      margin: EdgeInsets.only(bottom: 10),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: mBlue,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: CheckboxListTile(
-                        value: _value,
-                        onChanged: (bool value) {
-                          setState(() {
-                            _value = value;
-                          });
-                        },
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Container(
-                          child: Text(
-                            "Membuat Aplikasi Todolist menggunakan Flutter",
-                            style: GoogleFonts.lato(
-                                color: mBlueTitle,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                decoration: _value
-                                    ? TextDecoration.lineThrough
-                                    : TextDecoration.none),
-                          ),
-                        ),
-                      )),
+                  ListTodo(
+                    value: false,
+                    title: "Membuat Aplikasi TodoList dengan Menggunakan Flutter",
+                  ),
+                  ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),
+                  ListTodo(
+                    value: true,
+                    title: "Membut Apliskasi dengan Meggunakan Flutter",
+                  ),
+                  ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),
+                  ListTodo(
+                    value: false,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),
+                  ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),ListTodo(
+                    value: true,
+                    title: "Membuat Aplikasi dengan Menggunakan Flutter",
+                  ),
                 ],
               ),
             ),
