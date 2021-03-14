@@ -3,22 +3,22 @@ import 'package:flutter_todolist_app/constant/colors_constant.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ListTodo extends StatefulWidget {
-  final bool value;
+  final bool status;
   final String title;
 
-  ListTodo({this.value, this.title});
+  ListTodo({this.status, this.title});
 
   @override
   _ListTodoState createState() => _ListTodoState();
 }
 
 class _ListTodoState extends State<ListTodo> {
-  bool _value;
+  bool _status;
 
   @override
   void initState() {
-    this._value = widget.value;
     super.initState();
+    this._status = widget.status;
   }
 
   @override
@@ -35,10 +35,10 @@ class _ListTodoState extends State<ListTodo> {
             ]),
         child: CheckboxListTile(
           activeColor: mBlueTitle,
-          value: _value,
+          value: _status,
           onChanged: (bool value) {
             setState(() {
-              _value = value;
+              _status = value;
             });
           },
           controlAffinity: ListTileControlAffinity.leading,
@@ -46,13 +46,11 @@ class _ListTodoState extends State<ListTodo> {
             widget.title,
             style: GoogleFonts.lato(
                 color: mBlueTitle,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                decoration: widget.value
-                    ? TextDecoration.lineThrough
-                    : TextDecoration.none),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                decoration:
+                    _status ? TextDecoration.lineThrough : TextDecoration.none),
           ),
-          subtitle: Text("hai"),
         ));
   }
 }
